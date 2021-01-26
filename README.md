@@ -6,4 +6,4 @@ The data is stored in a `MongoDB` instance and is displayed via the [SpeedTrack 
 
 ## Why am I building this?
 
-The aim is to learn how to develop using the [MERN Stack](https://www.mongodb.com/mern-stack) and keep up with the times.
+The aim is to learn how to develop applications using the [MERN Stack](https://www.mongodb.com/mern-stack) and keep up with the times.
