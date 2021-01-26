@@ -12,7 +12,7 @@ if not load_dotenv(dotenv_path='./.env'):
     sys.exit(1)
 
 MONGO_HOST = os.getenv('MONGO_HOST')
-MONGO_PORT = os.getenv('MONGO_PORT')
+MONGO_PORT = int(os.getenv('MONGO_PORT')) or 27017
 MONGO_DATABASE = os.getenv('MONGO_DATABASE')
 
 try:
@@ -26,13 +26,14 @@ try:
     if not doc['download']:
         raise RuntimeError('An error was encountered when downloading: ' + str(result.stdout))
 
-    print('Saving result to database...')
     client = MongoClient(host=MONGO_HOST, port=MONGO_PORT)
 
     database = client.get_database(MONGO_DATABASE)
 
     collection = database.get_collection('speeds')
-    
+
+    print('Saving the result to database...')
+
     collection.insert_one(document=doc)
 
     print('[OK] Command successfully completed.')
