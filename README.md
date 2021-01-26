@@ -12,9 +12,11 @@ The aim is to learn how to develop applications using the [MERN Stack](https://w
 
 1. Create a `.env` file in the current directory by copying from the example `.env.example` file.
 2. Modify the following variables accordingly:
+
     - `MONGO_HOST` e.g. *localhost*
     - `MONGO_PORT` e.g. *27017*
     - `MONGO_DATABASE` e.g. *speedtrack*
+
 3. Install dependencies by running the following:
    
 ```
@@ -24,7 +26,13 @@ $ pip install -r requirements.txt
 4. Set up a cron job that runs every 5 minutes and downloads bandwidth speeds using the underlying `speedtest-cli` binary
    
 ```
+$ crontab -e
 # speedtrack-cli
 */5 * * * * /path/to/speedtrack-cli/venv/bin/python /path/to/speedtrack-cli/main.py  >> /path/to/log/speedtrack.log
 ```
 
+The result will be that every *5 minutes* the script will download new connection speeds and save to the mongodb instance.
+
+## Screenshot
+
+![Screenshot](./screenshot.png)
