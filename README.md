@@ -28,7 +28,7 @@ $ pip install -r requirements.txt
 ```
 $ crontab -e
 # speedtrack-cli
-*/5 * * * * /path/to/speedtrack-cli/venv/bin/python /path/to/speedtrack-cli/main.py  >> /path/to/log/speedtrack.log
+*/5 * * * * /path/to/speedtrack-cli/cron.sh  >> /var/log/speedtrack-cli.log
 ```
 
 The result will be that every *5 minutes* the script will download new connection speeds and save to the mongodb instance.
