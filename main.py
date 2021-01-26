@@ -40,8 +40,8 @@ try:
 
     sys.exit(0)
 except FileNotFoundError as err:
-    print('[KO] ' + str(err))
+    print('E: ' + str(err))
 except RuntimeError as err:
-    print('[KO] ' + str(err))
+    print('E: ' + str(err))
 
 sys.exit(1)
