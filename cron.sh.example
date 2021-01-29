@@ -2,9 +2,9 @@
 
 cd /path/to/speedtrack-cli || exit
 
-python3 -m venv venv
+python -m venv venv
 source ./venv/bin/activate
 pip install -r requirements.txt
-python3 --version
-python3 main.py
+python --version
+python main.py
 deactivate
